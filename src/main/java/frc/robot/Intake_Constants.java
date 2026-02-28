@@ -75,16 +75,16 @@ public class Intake_Constants {
 
 
     public static class  Intake_Kraken_Deploy {
-        public static final int Deploy_ID = 5;
+        public static final int Deploy_ID = 0;
 
-        public static double Deploy_Start = 1.2;
-        public static double Deploy_Back = -1.2;
+        public static double Deploy_Start = -6.2;
+        public static double Deploy_Back = 6.2;
         public static final TalonFXConfiguration deployConfiguration = new TalonFXConfiguration()
-        .withSlot0(new Slot0Configs() .withKP(0.2).withKI(0).withKD(0).withKS(0.1).withKV(0.12).withKA(0)
+        .withSlot0(new Slot0Configs() .withKP(0.2).withKI(0).withKD(0).withKS(0.3).withKV(0.12).withKA(0)
         .withStaticFeedforwardSign(StaticFeedforwardSignValue.UseClosedLoopSign))
-        .withSlot1(new Slot1Configs().withKP(0.2).withKI(0).withKD(0).withKS(0.1).withKV(0.12).withKA(0)
+        .withSlot1(new Slot1Configs().withKP(0.2).withKI(0).withKD(0).withKS(0.3).withKV(0.12).withKA(0)
         .withStaticFeedforwardSign(StaticFeedforwardSignValue.UseClosedLoopSign))
-        .withMotionMagic(new MotionMagicConfigs().withMotionMagicAcceleration(2000).withMotionMagicCruiseVelocity(500)
+        .withMotionMagic(new MotionMagicConfigs().withMotionMagicAcceleration(2000).withMotionMagicCruiseVelocity(2000)
         .withMotionMagicJerk(10));
         
     }
