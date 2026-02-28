@@ -39,12 +39,12 @@ public class Intake_Constants {
         public static final int Roller_ID = 11;
 
         public static final TalonFXConfiguration rollerConfiguration = new TalonFXConfiguration()
-        .withMotionMagic(new MotionMagicConfigs().withMotionMagicAcceleration(1500).withMotionMagicCruiseVelocity(600).withMotionMagicJerk(10))
+        .withMotionMagic(new MotionMagicConfigs().withMotionMagicAcceleration(2500).withMotionMagicCruiseVelocity(600).withMotionMagicJerk(30))
         .withSlot0(new Slot0Configs().withKP(0.2).withKI(0.05).withKD(0)
-        .withKS(0.2).withKV(0.1).withKA(0).withStaticFeedforwardSign(StaticFeedforwardSignValue.UseClosedLoopSign));
+        .withKS(0.2).withKV(0.24).withKA(0).withStaticFeedforwardSign(StaticFeedforwardSignValue.UseClosedLoopSign));
 
 
-        public static double Roller_Start = -70;
+        public static double Roller_Start = -25;
         
 
 
