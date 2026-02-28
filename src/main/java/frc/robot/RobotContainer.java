@@ -18,7 +18,7 @@ public class RobotContainer {
   //private final Intake_Neo_Kraken intake = new Intake_Neo_Kraken();
   //private final Intake_Kraken_Kraken intake = new Intake_Kraken_Kraken();
 
-  private final Intake_Neo_Kraken intake = new Intake_Neo_Kraken();
+  private final Intake_Kraken_Kraken intake = new Intake_Kraken_Kraken();
 
 
   private SendableChooser<Command> autoChooser;
@@ -28,8 +28,9 @@ public class RobotContainer {
   }
 
   private void configureBindings() {
-    joystic.x().whileTrue(new InstantCommand(intake::rollerStart)).onFalse(new InstantCommand(intake::rollerStop));
-    joystic.y().whileTrue(new InstantCommand(intake::deployOut)).onFalse(new InstantCommand(intake::deployBack));
+    //joystic.x().whileTrue(new InstantCommand(intake::rollerStart)).onFalse(new InstantCommand(intake::rollerStop));
+    joystic.y().onTrue(new InstantCommand(intake::deployOut)).onFalse(new InstantCommand(intake::stop));
+    joystic.a().onTrue(new InstantCommand(intake::deployBack)).onFalse(new InstantCommand(intake::stop));
   }
 
   public Command getAutonomousCommand() {
