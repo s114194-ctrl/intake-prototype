@@ -16,7 +16,9 @@ public class RobotContainer {
 
   private final CommandXboxController joystic = new CommandXboxController(0);
   //private final Intake_Neo_Kraken intake = new Intake_Neo_Kraken();
-  private final Intake_Kraken_Kraken intake = new Intake_Kraken_Kraken();
+  //private final Intake_Kraken_Kraken intake = new Intake_Kraken_Kraken();
+
+  private final Intake_Neo_Kraken intake = new Intake_Neo_Kraken();
 
 
   private SendableChooser<Command> autoChooser;

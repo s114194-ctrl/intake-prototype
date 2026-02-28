@@ -3,7 +3,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import com.ctre.phoenix6.hardware.TalonFX;
-
+import com.ctre.phoenix6.controls.MotionMagicVelocityVoltage;
 import com.ctre.phoenix6.controls.VelocityVoltage;
 
 import com.revrobotics.PersistMode;
@@ -65,17 +65,13 @@ public class Intake_Neo_Kraken extends SubsystemBase {
 
     deployConfig.closedLoop.feedForward
         .kV(Intake_Constants.Intake_Neo_Deploy.Deploy_Back_F, ClosedLoopSlot.kSlot1);
-    deploy.configure(deployConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-  
-
-
-   
-
-    
+    deploy.configure(deployConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);  
   }
 
   public void rollerStart(){
-    roller.setControl(new VelocityVoltage(Intake_Constants.Intake_Kraken_Roller.Roller_Start).withSlot(0));
+    //roller.setControl(new MotionMagicVelocityVoltage(Intake_Constants.Intake_Kraken_Roller.Roller_Start).withSlot(0));
+    //roller.set(0.4);
+    roller.setControl(new MotionMagicVelocityVoltage(Intake_Constants.Intake_Kraken_Roller.Roller_Start).withSlot(0));
   }
   
   public void rollerStop(){

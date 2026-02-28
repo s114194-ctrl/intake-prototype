@@ -11,13 +11,6 @@ import com.ctre.phoenix6.configs.Slot1Configs;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.signals.StaticFeedforwardSignValue;
 
-
-
-
-
-
-
-
 /** Add your docs here. */
 public class Intake_Constants {
 
@@ -36,21 +29,23 @@ public class Intake_Constants {
 
 
         public static final double maxAcceleration = 5;
-        public static final double cruiseVelocity = 2 ;
+        public static final double cruiseVelocity = 4 ;
 
       
     }
 
 
     public static class  Intake_Kraken_Roller {
-        public static final int Roller_ID = 1;
+        public static final int Roller_ID = 11;
 
         public static final TalonFXConfiguration rollerConfiguration = new TalonFXConfiguration()
-        .withSlot0(new Slot0Configs().withKP(0.2).withKI(0).withKD(0.5)
-        .withKS(0.1).withKV(0.12).withKA(0).withStaticFeedforwardSign(StaticFeedforwardSignValue.UseClosedLoopSign));
+        .withMotionMagic(new MotionMagicConfigs().withMotionMagicAcceleration(1500).withMotionMagicCruiseVelocity(600).withMotionMagicJerk(10))
+        .withSlot0(new Slot0Configs().withKP(0.2).withKI(0.05).withKD(0)
+        .withKS(0.2).withKV(0.1).withKA(0).withStaticFeedforwardSign(StaticFeedforwardSignValue.UseClosedLoopSign));
 
 
-        public static double Roller_Start = 60;//rps
+        public static double Roller_Start = -70;
+        
 
 
     }
